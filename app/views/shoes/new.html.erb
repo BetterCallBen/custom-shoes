@@ -1,0 +1,22 @@
+<div class="contain" data-controller="shoes">
+  <h1>Chaussure</h1>
+  <input type="checkbox" data-action="input->shoes#toggleForm" id="custom_btn">
+  <label for="custom_btn">Custom</label>
+  <div class="classic-form" data-shoes-target="classicForm">
+    <%= simple_form_for(@shoe) do |f| %>
+      <%= f.input :name, label: "Nom" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+      <%= f.button :submit, value: "Valider" %>
+    <% end %>
+  </div>
+
+  <div class="custom-form d-none" data-shoes-target="customForm">
+    <%= simple_form_for(@shoe) do |f| %>
+      <%= f.input :name, label: "Nom" %>
+      <%= f.input :description %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+      <%= f.button :submit, value: "Valider" %>
+    <% end %>
+  </div>
+
+</div>
