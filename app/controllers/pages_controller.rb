@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def basket
+    @shoes = current_user.shoes
+  end
 end
