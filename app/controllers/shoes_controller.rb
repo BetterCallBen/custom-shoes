@@ -1,7 +1,6 @@
 class ShoesController < ApplicationController
   def index
     @shoes = Shoe.all
-
   end
 
   def show
@@ -44,6 +43,6 @@ class ShoesController < ApplicationController
   private
 
   def shoe_params
-    params.require(:shoe).permit(:name, :description, :image)
+    params.require(:shoe).permit(:name, :description, photos: [])
   end
 end
